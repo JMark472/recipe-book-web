@@ -4,6 +4,9 @@ A React + Vite single-page app for the Full-Stack Recipe Book, styled with **Tai
 It talks to the [Recipe Book API](../recipe-book-api) using a shared Axios client that handles
 HttpOnly cookies, CSRF tokens, and automatic refresh-token rotation.
 
+**Live demo:** https://recipe-book-web-orpin.vercel.app
+(production API: https://recipe-book-api-szla.onrender.com)
+
 ## Stack
 
 | Concern | Choice |
@@ -13,13 +16,26 @@ HttpOnly cookies, CSRF tokens, and automatic refresh-token rotation.
 | Styling | Tailwind CSS v4 (`@tailwindcss/vite`) |
 | Routing | React Router |
 | HTTP | Axios (single shared client) |
-| Fonts | Fraunces (display) + Plus Jakarta Sans (body) |
+| Fonts | Sora (display) + Plus Jakarta Sans (body) |
 
 ## Theme
 
-The UI uses a "warm kitchen editorial" theme. Design tokens (colors and fonts) are defined
-once in `src/styles/global.css` inside the Tailwind `@theme` block, so utilities such as
-`bg-spice-600`, `text-ink-800`, and `font-display` are available everywhere.
+The UI uses a **"coastal gradient"** theme — a calm blue→green palette with a soft, airy
+feel. Design tokens (colors and fonts) are defined once in `src/styles/global.css` inside
+the Tailwind `@theme` block, so utilities such as `bg-azure-600`, `text-deep-800`,
+`bg-jade-500` and `font-display` are available everywhere.
+
+Custom helpers live in the same file:
+
+- Gradients: `bg-brand-gradient`, `bg-brand-gradient-soft`, `bg-mesh`, `bg-grid`,
+  `text-brand-gradient`
+- Animations: `animate-gradient`, `animate-waves` / `animate-waves-slow`,
+  `animate-clouds` / `animate-clouds-slow`, `animate-pattern`, `animate-float`,
+  `animate-rise`
+
+The auth brand panel is a small scene — drifting clouds, animated waves (`waves`) and a
+sailboat — while the navbar and the auth card use a drifting dot `pattern`. Every
+decorative animation is switched off for visitors who set `prefers-reduced-motion: reduce`.
 
 ## Folder structure
 
