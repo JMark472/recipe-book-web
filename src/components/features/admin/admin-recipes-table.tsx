@@ -10,7 +10,7 @@ type AdminRecipesTableProps = {
 };
 
 const difficultyStyles: Record<string, string> = {
-  Easy: "border-herb-200 bg-herb-50 text-herb-700",
+  Easy: "border-jade-200 bg-jade-50 text-jade-700",
   Medium: "border-amber-200 bg-amber-50 text-amber-700",
   Hard: "border-rose-200 bg-rose-50 text-rose-700",
 };
@@ -33,7 +33,7 @@ export function AdminRecipesTable({ recipes, loading }: AdminRecipesTableProps) 
       <tbody>
         {!loading && recipes.length === 0 && (
           <tr>
-            <td colSpan={6} className="py-12 text-center text-ink-400">
+            <td colSpan={6} className="py-12 text-center text-deep-400">
               No recipes have been created yet.
             </td>
           </tr>
@@ -44,19 +44,19 @@ export function AdminRecipesTable({ recipes, loading }: AdminRecipesTableProps) 
               <td>
                 <div className="flex min-w-52 items-center gap-3">
                   <img src={recipe.image} alt="" className="h-12 w-12 shrink-0 rounded-xl object-cover" />
-                  <span className="font-medium text-ink-900">{recipe.name}</span>
+                  <span className="font-medium text-deep-900">{recipe.name}</span>
                 </div>
               </td>
-              <td className="text-ink-600">{recipe.cuisine}</td>
-              <td className="text-ink-600">{recipe.mealType.join(", ")}</td>
+              <td className="text-deep-600">{recipe.cuisine}</td>
+              <td className="text-deep-600">{recipe.mealType.join(", ")}</td>
               <td>
                 <Tag className={difficultyStyles[recipe.difficulty]}>{recipe.difficulty}</Tag>
               </td>
-              <td className="text-ink-600">{recipe.cookTimeMinutes} min</td>
+              <td className="text-deep-600">{recipe.cookTimeMinutes} min</td>
               <td>
                 <div className="min-w-40">
-                  <p className="font-medium text-ink-800">{recipe.ownerName || "Unnamed user"}</p>
-                  <p className="font-mono text-[11px] text-ink-400">{recipe.userId.slice(0, 8)}…</p>
+                  <p className="font-medium text-deep-800">{recipe.ownerName || "Unnamed user"}</p>
+                  <p className="font-mono text-[11px] text-deep-400">{recipe.userId.slice(0, 8)}…</p>
                 </div>
               </td>
             </tr>

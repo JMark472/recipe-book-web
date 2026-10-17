@@ -79,8 +79,8 @@ export function RecipeCollection() {
       {/* Collection heading and primary action wrap on narrow screens. */}
       <div className="animate-rise mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="font-display text-2xl font-semibold tracking-tight text-ink-900">Your recipes</h2>
-          <p className="mt-1 text-sm text-ink-500">
+          <h2 className="font-display text-2xl font-semibold tracking-tight text-deep-900">Your recipes</h2>
+          <p className="mt-1 text-sm text-deep-500">
             {recipes.length} saved {recipes.length === 1 ? "recipe" : "recipes"} to inspire your next meal
           </p>
         </div>
@@ -99,15 +99,15 @@ export function RecipeCollection() {
       )}
 
       {recipes.length === 0 ? (
-        <div className="animate-rise rounded-3xl border border-dashed border-ink-900/20 bg-white/60 px-6 py-16 text-center">
-          <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-spice-50 text-spice-600">
+        <div className="animate-rise rounded-3xl border border-dashed border-deep-900/20 bg-white/60 px-6 py-16 text-center">
+          <div className="bg-brand-gradient-soft mx-auto grid h-14 w-14 place-items-center rounded-2xl text-azure-600 ring-1 ring-azure-500/15">
             <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M4 16.5h16M6.2 16.5c0-3.4 2.6-6.2 5.8-6.2s5.8 2.8 5.8 6.2" />
               <path d="M12 10.3c-.4-2.4 1.1-4.4 3.9-5.5-.3 2.6-1.5 4.4-3.9 5.5Z" />
             </svg>
           </div>
-          <h3 className="mt-5 font-display text-xl font-semibold text-ink-900">A fresh page for your favorites</h3>
-          <p className="mx-auto mt-2 max-w-sm text-sm text-ink-500">
+          <h3 className="mt-5 font-display text-xl font-semibold text-deep-900">A fresh page for your favorites</h3>
+          <p className="mx-auto mt-2 max-w-sm text-sm text-deep-500">
             Save a family classic or something new you want to try.
           </p>
           <Button className="mt-6" onClick={openForm}>

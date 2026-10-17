@@ -78,7 +78,7 @@ export function SignupForm() {
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      <p className="-mt-1 text-xs text-ink-400">At least 8 characters, including one uppercase letter and one number.</p>
+      <p className="-mt-1 text-xs text-deep-400">At least 8 characters, including one uppercase letter and one number.</p>
 
       {error && (
         <p role="alert" className="rounded-2xl border border-rose-200 bg-rose-50 px-4 py-2.5 text-sm text-rose-700">

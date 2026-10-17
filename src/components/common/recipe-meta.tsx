@@ -9,11 +9,11 @@ type RecipeMetaProps = {
 
 function MetaItem({ label, value, icon }: { label: string; value: string; icon: ReactNode }) {
   return (
-    <div className="flex items-center gap-3 rounded-2xl border border-ink-900/10 bg-cream-50/70 px-3 py-2.5">
-      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-xl bg-spice-50 text-spice-600">{icon}</span>
+    <div className="flex items-center gap-3 rounded-2xl border border-deep-900/10 bg-mist-50/70 px-3 py-2.5">
+      <span className="bg-brand-gradient-soft grid h-8 w-8 shrink-0 place-items-center rounded-xl text-azure-600 ring-1 ring-azure-500/15">{icon}</span>
       <div className="min-w-0">
-        <dt className="text-[11px] font-medium tracking-wide text-ink-400 uppercase">{label}</dt>
-        <dd className="truncate text-sm font-semibold text-ink-800">{value}</dd>
+        <dt className="text-[11px] font-medium tracking-wide text-deep-400 uppercase">{label}</dt>
+        <dd className="truncate text-sm font-semibold text-deep-800">{value}</dd>
       </div>
     </div>
   );

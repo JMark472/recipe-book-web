@@ -17,7 +17,7 @@ type RecipeCardProps = {
 };
 
 const difficultyStyles: Record<RecipeCardProps["difficulty"], string> = {
-  Easy: "bg-herb-100/95 text-herb-700",
+  Easy: "bg-jade-100/95 text-jade-700",
   Medium: "bg-amber-100/95 text-amber-700",
   Hard: "bg-rose-100/95 text-rose-700",
 };
@@ -34,15 +34,16 @@ export default function RecipeCard({
   onDelete,
 }: RecipeCardProps) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-ink-900/10 bg-white/85 shadow-sm shadow-ink-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink-900/10">
-      <div className="relative h-56 overflow-hidden bg-cream-200">
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-deep-900/10 bg-white/85 shadow-sm shadow-deep-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-azure-500/40 hover:shadow-xl hover:shadow-deep-900/10">
+      <span aria-hidden="true" className="h-1 w-full bg-brand-gradient" />
+      <div className="relative h-56 overflow-hidden bg-mist-200">
         <img
           src={image}
           alt={name}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink-900/70 via-ink-900/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-900/80 via-deep-900/15 to-transparent" />
         <span
           className={cn(
             "absolute top-3 right-3 rounded-full px-3 py-1 text-xs font-semibold backdrop-blur",
@@ -51,7 +52,7 @@ export default function RecipeCard({
         >
           {difficulty}
         </span>
-        <h3 className="absolute inset-x-4 bottom-3 font-display text-xl leading-snug font-semibold text-cream-50 drop-shadow-sm">
+        <h3 className="absolute inset-x-4 bottom-3 font-display text-xl leading-snug font-semibold text-mist-50 drop-shadow-sm">
           {name}
         </h3>
       </div>

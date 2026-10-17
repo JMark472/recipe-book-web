@@ -31,19 +31,19 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-ink-900/50 backdrop-blur-sm sm:items-center sm:p-4"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-deep-900/50 backdrop-blur-sm sm:items-center sm:p-4"
       onClick={onClose}
       role="presentation"
     >
       <div
-        className="animate-rise flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-3xl border border-ink-900/10 bg-cream-50 shadow-2xl shadow-ink-900/25 sm:max-w-2xl sm:rounded-3xl"
+        className="animate-rise flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-3xl border border-deep-900/10 bg-mist-50 shadow-2xl shadow-deep-900/25 sm:max-w-2xl sm:rounded-3xl"
         role="dialog"
         aria-modal="true"
         aria-label={title}
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-ink-900/10 px-6 py-4">
-          <h2 className="font-display text-xl font-semibold text-ink-900">{title}</h2>
+        <div className="bg-brand-gradient-soft flex shrink-0 items-center justify-between gap-4 border-b border-deep-900/10 px-6 py-4">
+          <h2 className="font-display text-xl font-semibold text-deep-900">{title}</h2>
           <Button variant="tertiary" size="sm" onClick={onClose}>
             Close
           </Button>

@@ -53,12 +53,12 @@ export function AdminRecipes() {
   return (
     <section aria-label="All recipes" className="animate-rise">
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <p className="text-sm text-ink-500">
+        <p className="text-sm text-deep-500">
           {loading ? (
             "Loading recipes…"
           ) : (
             <>
-              Showing <span className="font-semibold text-ink-900">{recipes.length}</span>{" "}
+              Showing <span className="font-semibold text-deep-900">{recipes.length}</span>{" "}
               {recipes.length === 1 ? "recipe" : "recipes"} across all users
             </>
           )}

@@ -57,23 +57,23 @@ export function RecipeDetails({ id }: { id: string }) {
         </p>
       ) : recipe ? (
         <>
-          <article className="animate-rise mt-6 overflow-hidden rounded-3xl border border-ink-900/10 bg-white/85 shadow-sm shadow-ink-900/5">
+          <article className="animate-rise mt-6 overflow-hidden rounded-3xl border border-deep-900/10 bg-white/85 shadow-sm shadow-deep-900/5">
             {/* Hero image with the recipe title and tags layered on top. */}
-            <div className="relative h-64 bg-cream-200 sm:h-96">
+            <div className="relative h-64 bg-mist-200 sm:h-96">
               <img src={recipe.image} alt={recipe.name} className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-ink-900/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-deep-900/80 via-deep-900/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-4 p-6 sm:p-8">
                 <div>
                   {recipe.tags.length > 0 && (
                     <div className="mb-3 flex flex-wrap gap-2">
                       {recipe.tags.map((tag) => (
-                        <Tag key={tag} className="border-white/20 bg-white/15 text-cream-50 backdrop-blur">
+                        <Tag key={tag} className="border-white/20 bg-white/15 text-mist-50 backdrop-blur">
                           {tag}
                         </Tag>
                       ))}
                     </div>
                   )}
-                  <h1 className="max-w-2xl font-display text-3xl leading-tight font-semibold text-cream-50 drop-shadow-sm sm:text-4xl">
+                  <h1 className="max-w-2xl font-display text-3xl leading-tight font-semibold text-mist-50 drop-shadow-sm sm:text-4xl">
                     {recipe.name}
                   </h1>
                 </div>
@@ -93,11 +93,11 @@ export function RecipeDetails({ id }: { id: string }) {
 
               <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
                 <section>
-                  <h2 className="font-display text-xl font-semibold text-ink-900">Ingredients</h2>
+                  <h2 className="font-display text-xl font-semibold text-deep-900">Ingredients</h2>
                   <ul className="mt-4 space-y-2.5">
                     {recipe.ingredients.map((ingredient, index) => (
-                      <li key={`${ingredient}-${index}`} className="flex items-start gap-3 text-sm text-ink-600">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-spice-500" />
+                      <li key={`${ingredient}-${index}`} className="flex items-start gap-3 text-sm text-deep-600">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-azure-500" />
                         <span className="leading-relaxed">{ingredient}</span>
                       </li>
                     ))}
@@ -105,14 +105,14 @@ export function RecipeDetails({ id }: { id: string }) {
                 </section>
 
                 <section>
-                  <h2 className="font-display text-xl font-semibold text-ink-900">Instructions</h2>
+                  <h2 className="font-display text-xl font-semibold text-deep-900">Instructions</h2>
                   <ol className="mt-4 space-y-5">
                     {recipe.instructions.map((instruction, index) => (
                       <li key={`${instruction}-${index}`} className="flex gap-4">
-                        <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-ink-900 text-xs font-semibold text-cream-50">
+                        <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-brand-gradient text-xs font-semibold text-white">
                           {index + 1}
                         </span>
-                        <p className="pt-0.5 text-sm leading-relaxed text-ink-600">{instruction}</p>
+                        <p className="pt-0.5 text-sm leading-relaxed text-deep-600">{instruction}</p>
                       </li>
                     ))}
                   </ol>

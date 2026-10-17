@@ -6,7 +6,7 @@ type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & { children: ReactNode;
 export function Label({ className, children, error, ...props }: LabelProps) {
   return (
     <label
-      className={cn("mb-1.5 block text-sm font-medium", error ? "text-rose-600" : "text-ink-700", className)}
+      className={cn("mb-1.5 block text-sm font-medium", error ? "text-rose-600" : "text-deep-700", className)}
       {...props}
     >
       {children}

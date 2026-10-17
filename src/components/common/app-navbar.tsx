@@ -24,22 +24,23 @@ export function AppNavbar() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-ink-900/10 bg-cream-50/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 bg-mist-50/80 backdrop-blur-md">
+      <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-brand-gradient opacity-70" />
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link to={home} className="flex items-center gap-2.5">
-          <BrandMark className="h-9 w-9" />
-          <span className="font-display text-lg font-semibold tracking-tight text-ink-900">Recipe Book</span>
+          <BrandMark className="h-9 w-9 bg-brand-gradient text-white shadow-azure-900/25" />
+          <span className="font-display text-lg font-semibold tracking-tight text-deep-900">Recipe Book</span>
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-3">
           {user && (
-            <div className="hidden items-center gap-2.5 rounded-full border border-ink-900/10 bg-white/70 py-1 pr-3 pl-1 sm:flex">
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-spice-600 text-xs font-semibold text-cream-50">
+            <div className="hidden items-center gap-2.5 rounded-full border border-deep-900/10 bg-white/70 py-1 pr-3 pl-1 sm:flex">
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-brand-gradient text-xs font-semibold text-white">
                 {initials}
               </span>
-              <span className="max-w-40 truncate text-sm font-medium text-ink-700">{user.name}</span>
+              <span className="max-w-40 truncate text-sm font-medium text-deep-700">{user.name}</span>
               {user.role === "ADMIN" && (
-                <span className="rounded-full bg-herb-100 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-herb-700 uppercase">
+                <span className="rounded-full bg-jade-100 px-2 py-0.5 text-[10px] font-semibold tracking-wide text-jade-700 uppercase">
                   Admin
                 </span>
               )}

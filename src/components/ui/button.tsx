@@ -8,12 +8,12 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const variants = {
-  primary: "bg-spice-600 text-cream-50 shadow-sm shadow-spice-900/25 hover:bg-spice-700",
+  primary: "bg-brand-gradient text-white shadow-sm shadow-azure-900/25 hover:shadow-md hover:brightness-110",
   secondary:
-    "border border-ink-900/15 bg-white/80 text-ink-800 shadow-sm shadow-ink-900/5 hover:border-ink-900/30 hover:bg-white",
-  tertiary: "text-ink-600 hover:bg-ink-900/5 hover:text-ink-900",
+    "border border-deep-900/15 bg-white/80 text-deep-800 shadow-sm shadow-deep-900/5 hover:border-deep-900/30 hover:bg-white",
+  tertiary: "text-deep-600 hover:bg-deep-900/5 hover:text-deep-900",
   danger: "border border-rose-200 bg-rose-50 text-rose-700 hover:bg-rose-100",
-  ghost: "text-cream-100 hover:bg-white/10",
+  ghost: "text-mist-100 hover:bg-white/10",
 };
 
 const sizes = {

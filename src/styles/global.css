@@ -1,46 +1,47 @@
 @import "tailwindcss";
 
 /*
- * Design tokens for the Recipe Book "warm kitchen editorial" theme.
+ * Design tokens for the Recipe Book "coastal gradient" theme.
  * Tailwind v4 turns each --color-* / --font-* entry into utilities,
- * e.g. --color-spice-600 -> bg-spice-600, text-spice-600, border-spice-600.
+ * e.g. --color-azure-600 -> bg-azure-600, text-azure-600, border-azure-600.
  */
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
 
-  /* Warm paper backgrounds */
-  --color-cream-50: #fdfaf4;
-  --color-cream-100: #faf4e9;
-  --color-cream-200: #f2e7d5;
-  --color-cream-300: #e8d8be;
+  /* Mist — pale blue-green surfaces */
+  --color-mist-50: #f3fbfa;
+  --color-mist-100: #e7f6f4;
+  --color-mist-200: #cfeeea;
+  --color-mist-300: #a9ddd7;
 
-  /* Deep roasted-brown text */
-  --color-ink-400: #8d7b6a;
-  --color-ink-500: #6f5d4c;
-  --color-ink-600: #564739;
-  --color-ink-700: #3f332a;
-  --color-ink-800: #2c231c;
-  --color-ink-900: #1d1712;
+  /* Deep — dark blue-green text */
+  --color-deep-400: #6d8f8c;
+  --color-deep-500: #52716f;
+  --color-deep-600: #3c5857;
+  --color-deep-700: #2a4140;
+  --color-deep-800: #1c2f2f;
+  --color-deep-900: #0f201f;
 
-  /* Terracotta / spice — primary accent */
-  --color-spice-50: #fdf4ef;
-  --color-spice-100: #fbe5da;
-  --color-spice-200: #f6c8b2;
-  --color-spice-300: #eda184;
-  --color-spice-400: #e0784f;
-  --color-spice-500: #d0572f;
-  --color-spice-600: #b83f20;
-  --color-spice-700: #96311b;
+  /* Azure — primary blue */
+  --color-azure-50: #eff6ff;
+  --color-azure-100: #dbeafe;
+  --color-azure-200: #bfdbfe;
+  --color-azure-300: #93c5fd;
+  --color-azure-400: #60a5fa;
+  --color-azure-500: #3b82f6;
+  --color-azure-600: #2563eb;
+  --color-azure-700: #1d4ed8;
+  --color-azure-900: #172554;
 
-  /* Herb / olive — secondary accent */
-  --color-herb-50: #f4f5ec;
-  --color-herb-100: #eaecdc;
-  --color-herb-200: #d5dab8;
-  --color-herb-300: #bcc495;
-  --color-herb-500: #7c8a52;
-  --color-herb-600: #626e3f;
-  --color-herb-700: #4b5430;
+  /* Jade — secondary green */
+  --color-jade-50: #ecfdf5;
+  --color-jade-100: #d1fae5;
+  --color-jade-200: #a7f3d0;
+  --color-jade-300: #6ee7b7;
+  --color-jade-500: #10b981;
+  --color-jade-600: #059669;
+  --color-jade-700: #047857;
 }
 
 @layer base {
@@ -52,24 +53,59 @@
   body {
     margin: 0;
     min-width: 320px;
-    background-color: var(--color-cream-50);
-    background-image:
-      radial-gradient(60rem 60rem at 110% -10%, var(--color-spice-50), transparent 55%),
-      radial-gradient(50rem 50rem at -10% 0%, var(--color-herb-50), transparent 50%);
-    background-attachment: fixed;
-    color: var(--color-ink-800);
+    color: var(--color-deep-800);
     font-family: var(--font-sans);
+    background-color: var(--color-mist-50);
+    /* Blue -> green glow washes plus a faint dot grid pattern. */
+    background-image:
+      radial-gradient(62rem 62rem at 108% -12%, rgba(37, 99, 235, 0.16), transparent 55%),
+      radial-gradient(52rem 52rem at -8% -4%, rgba(5, 150, 105, 0.16), transparent 52%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Ccircle cx='2' cy='2' r='1.2' fill='%232563eb' fill-opacity='0.10'/%3E%3C/svg%3E");
+    background-attachment: fixed;
   }
 
   ::selection {
-    background-color: var(--color-spice-200);
-    color: var(--color-ink-900);
+    background-color: var(--color-azure-200);
+    color: var(--color-deep-900);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-spice-500);
+    outline: 2px solid var(--color-azure-500);
     outline-offset: 2px;
   }
+}
+
+/* Gradient + pattern helpers -------------------------------------------- */
+
+/* Solid blue -> green gradient for buttons, marks and accents. */
+@utility bg-brand-gradient {
+  background-image: linear-gradient(135deg, var(--color-azure-600) 0%, var(--color-jade-500) 100%);
+}
+
+/* Gentle wash of the brand gradient for cards and panels. */
+@utility bg-brand-gradient-soft {
+  background-image: linear-gradient(135deg, var(--color-azure-50) 0%, var(--color-jade-50) 100%);
+}
+
+/* Ambient mesh glow used behind hero and brand panels. */
+@utility bg-mesh {
+  background-image:
+    radial-gradient(30rem 30rem at 85% 10%, rgba(37, 99, 235, 0.4), transparent 60%),
+    radial-gradient(28rem 28rem at 8% 95%, rgba(5, 150, 105, 0.4), transparent 60%);
+}
+
+/* Faint line grid pattern overlay. */
+@utility bg-grid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Cpath d='M32 0H0v32' fill='none' stroke='%230f201f' stroke-opacity='0.06'/%3E%3C/svg%3E");
+  background-size: 32px 32px;
+}
+
+/* Gradient-filled text for headings. */
+@utility text-brand-gradient {
+  background-image: linear-gradient(120deg, var(--color-azure-700) 0%, var(--color-jade-600) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* Reusable entrance animation for cards and panels. */
@@ -86,4 +122,37 @@
 
 .animate-rise {
   animation: rise-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Slowly shifting gradient for hero panels. */
+@keyframes gradient-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-pan 14s ease infinite;
+}
+
+/* Soft floating motion for decorative blobs. */
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -16px, 0);
+  }
+}
+
+.animate-float {
+  animation: blob-float 8s ease-in-out infinite;
 }

@@ -17,33 +17,37 @@ export default function AuthLayout() {
   return (
     <main className="min-h-svh lg:grid lg:grid-cols-[1.05fr_1fr]">
       {/* Brand panel — large screens only */}
-      <aside className="relative hidden overflow-hidden bg-ink-900 p-12 text-cream-50 lg:flex lg:flex-col lg:justify-between">
+      <aside className="animate-gradient relative hidden overflow-hidden bg-brand-gradient p-12 text-mist-50 lg:flex lg:flex-col lg:justify-between">
+        {/* Layered pattern + ambient glow overlays. */}
+        <div aria-hidden="true" className="bg-mesh pointer-events-none absolute inset-0 opacity-70" />
+        <div aria-hidden="true" className="bg-grid pointer-events-none absolute inset-0 opacity-[0.18]" />
         <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(40rem 40rem at 120% 0%, rgba(224,120,79,.35), transparent 60%), radial-gradient(30rem 30rem at -10% 110%, rgba(124,138,82,.35), transparent 60%)",
-          }}
+          aria-hidden="true"
+          className="animate-float pointer-events-none absolute -top-20 -right-16 h-72 w-72 rounded-full bg-white/15 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="animate-float pointer-events-none absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-jade-300/20 blur-3xl"
         />
         <div className="relative flex items-center gap-3">
-          <BrandMark className="h-11 w-11 bg-cream-50 text-spice-600" />
+          <BrandMark className="h-11 w-11 bg-white/15 text-white ring-1 ring-white/25 backdrop-blur" />
           <span className="font-display text-xl font-semibold tracking-tight">Recipe Book</span>
         </div>
 
         <div className="relative">
-          <p className="text-xs font-semibold tracking-[0.28em] text-spice-200 uppercase">Your kitchen companion</p>
+          <p className="text-xs font-semibold tracking-[0.28em] text-jade-100 uppercase">Your kitchen companion</p>
           <h2 className="mt-4 font-display text-4xl leading-tight font-semibold xl:text-5xl">
             Every favorite meal,
             <br />
             gathered in one place.
           </h2>
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream-100/70">
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-mist-100/70">
             Save family classics, plan weeknight dinners, and keep your ingredients and steps neatly organized.
           </p>
-          <ul className="mt-8 grid gap-3 text-sm text-cream-100/85">
+          <ul className="mt-8 grid gap-3 text-sm text-mist-100/85">
             {highlights.map((item) => (
               <li key={item} className="flex items-center gap-3">
-                <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-spice-500/25 text-spice-200">
+                <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-white/20 text-white">
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="m5 12 4.5 4.5L19 7" />
                   </svg>
@@ -54,7 +58,7 @@ export default function AuthLayout() {
           </ul>
         </div>
 
-        <p className="relative text-xs text-cream-100/50">React · Express · Drizzle ORM · PostgreSQL</p>
+        <p className="relative text-xs text-mist-100/50">React · Express · Drizzle ORM · PostgreSQL</p>
       </aside>
 
       {/* Form panel */}

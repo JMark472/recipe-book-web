@@ -7,10 +7,7 @@ import { cn } from "@/lib/cn";
 export function BrandMark({ className }: { className?: string }) {
   return (
     <span
-      className={cn(
-        "grid place-items-center rounded-2xl bg-spice-600 text-cream-50 shadow-sm shadow-spice-900/25",
-        className,
-      )}
+      className={cn("grid place-items-center rounded-2xl shadow-sm", className)}
     >
       <svg
         viewBox="0 0 24 24"

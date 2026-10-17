@@ -105,8 +105,8 @@ export default function AddRecipeForm({ onSuccess }: AddRecipeFormProps) {
   return (
     <form onSubmit={handleAddRecipe} className="grid grid-cols-1 gap-x-6 gap-y-5 sm:grid-cols-2">
       <div className="sm:col-span-2">
-        <p className="text-xs text-ink-400">
-          Fields with a <span className="font-semibold text-spice-600">*</span> are required. List fields accept one item per line.
+        <p className="text-xs text-deep-400">
+          Fields with a <span className="font-semibold text-azure-600">*</span> are required. List fields accept one item per line.
         </p>
       </div>
 
