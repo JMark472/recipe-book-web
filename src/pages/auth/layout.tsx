@@ -21,6 +21,25 @@ export default function AuthLayout() {
         {/* Layered pattern + ambient glow overlays. */}
         <div aria-hidden="true" className="bg-mesh pointer-events-none absolute inset-0 opacity-70" />
         <div aria-hidden="true" className="bg-grid pointer-events-none absolute inset-0 opacity-[0.18]" />
+        {/* Subtle wave pattern at the bottom of the blue/green panel. */}
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-1 left-0 right-0 w-full"
+          viewBox="0 0 1440 220"
+          preserveAspectRatio="none"
+          opacity="0.25"
+        >
+          <path
+            d="M0 120C240 60 480 200 720 120C960 40 1200 160 1440 80L1440 220L0 220Z"
+            fill="url(#waveFill)"
+          />
+          <defs>
+            <linearGradient id="waveFill" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#ecfdf5" stopOpacity="0.5" />
+              <stop offset="1" stopColor="#bfdbfe" stopOpacity="0.25" />
+            </linearGradient>
+          </defs>
+        </svg>
         <div
           aria-hidden="true"
           className="animate-float pointer-events-none absolute -top-20 -right-16 h-72 w-72 rounded-full bg-white/15 blur-3xl"
