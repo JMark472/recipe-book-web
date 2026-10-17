@@ -156,3 +156,25 @@
 .animate-float {
   animation: blob-float 8s ease-in-out infinite;
 }
+
+/*
+ * Animation "waves" — drifts the wave strip sideways forever. The strip holds
+ * two identical tiles, so translating it by exactly -50% (one tile) loops
+ * without a seam.
+ */
+@keyframes waves {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-waves {
+  animation: waves 16s linear infinite;
+}
+
+.animate-waves-slow {
+  animation: waves 26s linear infinite reverse;
+}

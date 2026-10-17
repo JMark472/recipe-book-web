@@ -21,24 +21,46 @@ export default function AuthLayout() {
         {/* Layered pattern + ambient glow overlays. */}
         <div aria-hidden="true" className="bg-mesh pointer-events-none absolute inset-0 opacity-70" />
         <div aria-hidden="true" className="bg-grid pointer-events-none absolute inset-0 opacity-[0.18]" />
-        {/* Subtle wave pattern at the bottom of the blue/green panel. */}
+        {/* Animation "waves" — two tiled wave layers drifting across the blue/green panel. */}
         <svg
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-1 left-0 right-0 w-full"
-          viewBox="0 0 1440 220"
+          className="animate-waves pointer-events-none absolute -bottom-1 left-0 w-[200%] opacity-25"
+          viewBox="0 0 2880 220"
           preserveAspectRatio="none"
-          opacity="0.25"
         >
-          <path
-            d="M0 120C240 60 480 200 720 120C960 40 1200 160 1440 80L1440 220L0 220Z"
-            fill="url(#waveFill)"
-          />
           <defs>
-            <linearGradient id="waveFill" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#ecfdf5" stopOpacity="0.5" />
-              <stop offset="1" stopColor="#bfdbfe" stopOpacity="0.25" />
+            <linearGradient id="waveFillA" x1="0" y1="0" x2="1" y2="0">
+              <stop stopColor="#ecfdf5" stopOpacity="0.55" />
+              <stop offset="1" stopColor="#bfdbfe" stopOpacity="0.3" />
             </linearGradient>
+            <path
+              id="wavePathA"
+              d="M0 100C120 40 240 40 360 100C480 160 600 160 720 100C840 40 960 40 1080 100C1200 160 1320 160 1440 100L1440 220L0 220Z"
+              fill="url(#waveFillA)"
+            />
           </defs>
+          <use href="#wavePathA" />
+          <use href="#wavePathA" transform="translate(1440 0)" />
+        </svg>
+        <svg
+          aria-hidden="true"
+          className="animate-waves-slow pointer-events-none absolute -bottom-1 left-0 w-[200%] opacity-20"
+          viewBox="0 0 2880 220"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="waveFillB" x1="0" y1="0" x2="1" y2="0">
+              <stop stopColor="#ffffff" stopOpacity="0.4" />
+              <stop offset="1" stopColor="#a7f3d0" stopOpacity="0.25" />
+            </linearGradient>
+            <path
+              id="wavePathB"
+              d="M0 140C120 90 240 90 360 140C480 190 600 190 720 140C840 90 960 90 1080 140C1200 190 1320 190 1440 140L1440 220L0 220Z"
+              fill="url(#waveFillB)"
+            />
+          </defs>
+          <use href="#wavePathB" />
+          <use href="#wavePathB" transform="translate(1440 0)" />
         </svg>
         <div
           aria-hidden="true"
