@@ -1,6 +1,6 @@
 import { AuthHeader } from "@/components/features/auth/auth-header";
 import { BrandMark } from "@/components/common/brand";
-import { Navigate, Outlet } from "react-router";
+import { Navigate, Outlet, useNavigate } from "react-router";
 import { useAuth } from "@/components/context/use-auth";
 
 const highlights = [
@@ -9,10 +9,28 @@ const highlights = [
   "An admin view across the whole collection",
 ];
 
+// Developer attribution shown in the auth pages footer.
+const DEVELOPER = {
+  name: "John Mark Coni",
+  email: "ipacyaw@gmail.com",
+  github: "https://github.com/JMark472",
+  githubLabel: "github.com/JMark472",
+};
+
 export default function AuthLayout() {
   const { user, ready } = useAuth();
+  const navigate = useNavigate();
 
   if (ready && user) return <Navigate to={user.role === "ADMIN" ? "/admin" : "/user"} replace />;
+
+  // Step back through history, or fall back to the app root.
+  function handleBack() {
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
+  }
 
   return (
     <main className="min-h-svh lg:grid lg:grid-cols-[1.05fr_1fr]">
@@ -179,6 +197,52 @@ export default function AuthLayout() {
         <div className="w-full max-w-md">
           <AuthHeader />
           {ready && <Outlet />}
+
+          {/* Footer: back button + developer attribution. */}
+          <footer className="mt-10 text-center">
+            <button
+              type="button"
+              onClick={handleBack}
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-deep-900/10 bg-white/70 px-4 py-2 text-sm font-medium text-deep-700 shadow-sm shadow-deep-900/5 transition-colors hover:border-azure-500/40 hover:text-azure-600"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+              Back
+            </button>
+
+            <p className="mt-5 text-xs text-deep-500">
+              Developed by <span className="font-semibold text-deep-700">{DEVELOPER.name}</span>
+            </p>
+            <p className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-xs text-deep-500">
+              <a
+                href={`mailto:${DEVELOPER.email}`}
+                className="font-medium text-azure-600 underline-offset-4 hover:underline"
+              >
+                {DEVELOPER.email}
+              </a>
+              <span aria-hidden="true" className="text-deep-400">
+                •
+              </span>
+              <a
+                href={DEVELOPER.github}
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-azure-600 underline-offset-4 hover:underline"
+              >
+                {DEVELOPER.githubLabel}
+              </a>
+            </p>
+          </footer>
         </div>
       </div>
     </main>

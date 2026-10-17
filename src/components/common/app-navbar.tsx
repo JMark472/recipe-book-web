@@ -25,8 +25,10 @@ export function AppNavbar() {
 
   return (
     <header className="sticky top-0 z-40 bg-mist-50/80 backdrop-blur-md">
+      {/* Animation "pattern" — drifting dot grid across the light header. */}
+      <span aria-hidden="true" className="pattern-dots animate-pattern pointer-events-none absolute inset-0 opacity-60" />
       <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-brand-gradient opacity-70" />
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link to={home} className="flex items-center gap-2.5">
           <BrandMark className="h-9 w-9 bg-brand-gradient text-white shadow-azure-900/25" />
           <span className="font-display text-lg font-semibold tracking-tight text-deep-900">Recipe Book</span>
