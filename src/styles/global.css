@@ -178,3 +178,24 @@
 .animate-waves-slow {
   animation: waves 26s linear infinite reverse;
 }
+
+/*
+ * Animation "clouds" — slow sideways drift for the sky layers. Each strip
+ * holds two identical tiles, so a -50% translate loops without a seam.
+ */
+@keyframes clouds {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-clouds {
+  animation: clouds 90s linear infinite;
+}
+
+.animate-clouds-slow {
+  animation: clouds 130s linear infinite reverse;
+}

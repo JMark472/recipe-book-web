@@ -21,6 +21,78 @@ export default function AuthLayout() {
         {/* Layered pattern + ambient glow overlays. */}
         <div aria-hidden="true" className="bg-mesh pointer-events-none absolute inset-0 opacity-70" />
         <div aria-hidden="true" className="bg-grid pointer-events-none absolute inset-0 opacity-[0.18]" />
+        {/* Sky wash — cool blue overhead light fading down into the brand gradient. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(125,211,252,.50) 0%, rgba(37,99,235,.26) 42%, rgba(5,150,105,0) 74%)",
+          }}
+        />
+        {/* Animation "clouds" — two tiled strips of clouds drifting across the sky. */}
+        <svg
+          aria-hidden="true"
+          className="animate-clouds pointer-events-none absolute top-0 left-0 w-[200%]"
+          viewBox="0 0 2880 300"
+          fill="#ffffff"
+        >
+          <defs>
+            <g id="cloudTileA">
+              <g opacity="0.5" transform="translate(170 82)">
+                <ellipse cx="0" cy="0" rx="72" ry="26" />
+                <ellipse cx="-38" cy="10" rx="42" ry="20" />
+                <ellipse cx="44" cy="10" rx="48" ry="22" />
+                <ellipse cx="4" cy="-18" rx="46" ry="26" />
+              </g>
+              <g opacity="0.32" transform="translate(640 44) scale(0.7)">
+                <ellipse cx="0" cy="0" rx="72" ry="26" />
+                <ellipse cx="-38" cy="10" rx="42" ry="20" />
+                <ellipse cx="44" cy="10" rx="48" ry="22" />
+                <ellipse cx="4" cy="-18" rx="46" ry="26" />
+              </g>
+              <g opacity="0.4" transform="translate(1090 118) scale(0.86)">
+                <ellipse cx="0" cy="0" rx="72" ry="26" />
+                <ellipse cx="-38" cy="10" rx="42" ry="20" />
+                <ellipse cx="44" cy="10" rx="48" ry="22" />
+                <ellipse cx="4" cy="-18" rx="46" ry="26" />
+              </g>
+            </g>
+          </defs>
+          <use href="#cloudTileA" />
+          <use href="#cloudTileA" transform="translate(1440 0)" />
+        </svg>
+        <svg
+          aria-hidden="true"
+          className="animate-clouds-slow pointer-events-none absolute top-28 left-0 w-[200%]"
+          viewBox="0 0 2880 300"
+          fill="#ffffff"
+        >
+          <defs>
+            <g id="cloudTileB">
+              <g opacity="0.28" transform="translate(360 150) scale(1.15)">
+                <ellipse cx="0" cy="0" rx="72" ry="26" />
+                <ellipse cx="-38" cy="10" rx="42" ry="20" />
+                <ellipse cx="44" cy="10" rx="48" ry="22" />
+                <ellipse cx="4" cy="-18" rx="46" ry="26" />
+              </g>
+              <g opacity="0.22" transform="translate(900 76) scale(0.62)">
+                <ellipse cx="0" cy="0" rx="72" ry="26" />
+                <ellipse cx="-38" cy="10" rx="42" ry="20" />
+                <ellipse cx="44" cy="10" rx="48" ry="22" />
+                <ellipse cx="4" cy="-18" rx="46" ry="26" />
+              </g>
+              <g opacity="0.3" transform="translate(1300 190) scale(0.92)">
+                <ellipse cx="0" cy="0" rx="72" ry="26" />
+                <ellipse cx="-38" cy="10" rx="42" ry="20" />
+                <ellipse cx="44" cy="10" rx="48" ry="22" />
+                <ellipse cx="4" cy="-18" rx="46" ry="26" />
+              </g>
+            </g>
+          </defs>
+          <use href="#cloudTileB" />
+          <use href="#cloudTileB" transform="translate(1440 0)" />
+        </svg>
         {/* Animation "waves" — two tiled wave layers drifting across the blue/green panel. */}
         <svg
           aria-hidden="true"
