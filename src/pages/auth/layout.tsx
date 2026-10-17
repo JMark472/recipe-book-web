@@ -160,6 +160,24 @@ export default function AuthLayout() {
           aria-hidden="true"
           className="animate-float pointer-events-none absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-jade-300/20 blur-3xl"
         />
+        {/* Decorative sailboat drifting on the waves in the blue brand panel. */}
+        <svg
+          aria-hidden="true"
+          className="animate-float pointer-events-none absolute right-8 bottom-24 w-24 text-white drop-shadow-lg sm:right-12 sm:w-28"
+          viewBox="0 0 120 120"
+          fill="currentColor"
+        >
+          {/* Mast */}
+          <rect x="58.5" y="14" width="3" height="74" rx="1.5" opacity="0.9" />
+          {/* Main sail */}
+          <path d="M64 22 L102 78 L64 78 Z" opacity="0.9" />
+          {/* Jib sail */}
+          <path d="M56 32 L56 78 L22 78 Z" opacity="0.65" />
+          {/* Hull */}
+          <path d="M14 82 H106 L93 101 Q60 109 27 101 Z" opacity="0.95" />
+          {/* Pennant */}
+          <path d="M61 14 L80 20 L61 26 Z" opacity="0.8" />
+        </svg>
         <div className="relative flex items-center gap-3">
           <BrandMark className="h-11 w-11 bg-white/15 text-white ring-1 ring-white/25 backdrop-blur" />
           <span className="font-display text-xl font-semibold tracking-tight">Recipe Book</span>
