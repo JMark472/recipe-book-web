@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens for the Recipe Book "warm kitchen editorial" theme.
+ * Tailwind v4 turns each --color-* / --font-* entry into utilities,
+ * e.g. --color-spice-600 -> bg-spice-600, text-spice-600, border-spice-600.
+ */
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  /* Warm paper backgrounds */
+  --color-cream-50: #fdfaf4;
+  --color-cream-100: #faf4e9;
+  --color-cream-200: #f2e7d5;
+  --color-cream-300: #e8d8be;
+
+  /* Deep roasted-brown text */
+  --color-ink-400: #8d7b6a;
+  --color-ink-500: #6f5d4c;
+  --color-ink-600: #564739;
+  --color-ink-700: #3f332a;
+  --color-ink-800: #2c231c;
+  --color-ink-900: #1d1712;
+
+  /* Terracotta / spice — primary accent */
+  --color-spice-50: #fdf4ef;
+  --color-spice-100: #fbe5da;
+  --color-spice-200: #f6c8b2;
+  --color-spice-300: #eda184;
+  --color-spice-400: #e0784f;
+  --color-spice-500: #d0572f;
+  --color-spice-600: #b83f20;
+  --color-spice-700: #96311b;
+
+  /* Herb / olive — secondary accent */
+  --color-herb-50: #f4f5ec;
+  --color-herb-100: #eaecdc;
+  --color-herb-200: #d5dab8;
+  --color-herb-300: #bcc495;
+  --color-herb-500: #7c8a52;
+  --color-herb-600: #626e3f;
+  --color-herb-700: #4b5430;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background-color: var(--color-cream-50);
+    background-image:
+      radial-gradient(60rem 60rem at 110% -10%, var(--color-spice-50), transparent 55%),
+      radial-gradient(50rem 50rem at -10% 0%, var(--color-herb-50), transparent 50%);
+    background-attachment: fixed;
+    color: var(--color-ink-800);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: var(--color-spice-200);
+    color: var(--color-ink-900);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-spice-500);
+    outline-offset: 2px;
+  }
+}
+
+/* Reusable entrance animation for cards and panels. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
