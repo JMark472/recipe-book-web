@@ -228,3 +228,19 @@
 .animate-pattern {
   animation: pattern 10s linear infinite;
 }
+
+/*
+ * Respect the visitor's motion preference: keep every colour, pattern and
+ * layout, but stop the decorative drifting/bobbing animations and hover
+ * transitions. Setting a near-zero duration (rather than `animation: none`)
+ * lets entrance animations settle instantly, so nothing is left invisible.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
